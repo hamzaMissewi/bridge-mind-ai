@@ -10,7 +10,8 @@ vite.config.ts.*
 
 shared
 
-client/src/replit_integrations
+**/*replit*
+
 script
 
 attached_assets
