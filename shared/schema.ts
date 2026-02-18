@@ -1,5 +1,4 @@
-import { pgTable, text, serial, integer, boolean, timestamp, jsonb } from "drizzle-orm/pg-core";
-import { relations } from "drizzle-orm";
+import { boolean, integer, jsonb, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -7,7 +6,7 @@ import { z } from "zod";
 export * from "./models/auth";
 export * from "./models/chat";
 
-import { users } from "./models/auth";
+// import { users } from "./models/auth";
 
 // === PROJECTS ===
 export const projects = pgTable("projects", {
@@ -19,10 +18,10 @@ export const projects = pgTable("projects", {
   updatedAt: timestamp("updated_at").defaultNow(),
 });
 
-export const insertProjectSchema = createInsertSchema(projects).omit({ 
-  id: true, 
-  createdAt: true, 
-  updatedAt: true 
+export const insertProjectSchema = createInsertSchema(projects).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true
 });
 
 export type Project = typeof projects.$inferSelect;
@@ -40,9 +39,9 @@ export const agents = pgTable("agents", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertAgentSchema = createInsertSchema(agents).omit({ 
-  id: true, 
-  createdAt: true 
+export const insertAgentSchema = createInsertSchema(agents).omit({
+  id: true,
+  createdAt: true
 });
 
 export type Agent = typeof agents.$inferSelect;
@@ -60,9 +59,9 @@ export const skills = pgTable("skills", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertSkillSchema = createInsertSchema(skills).omit({ 
-  id: true, 
-  createdAt: true 
+export const insertSkillSchema = createInsertSchema(skills).omit({
+  id: true,
+  createdAt: true
 });
 
 export type Skill = typeof skills.$inferSelect;
@@ -80,9 +79,9 @@ export const prompts = pgTable("prompts", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertPromptSchema = createInsertSchema(prompts).omit({ 
-  id: true, 
-  createdAt: true 
+export const insertPromptSchema = createInsertSchema(prompts).omit({
+  id: true,
+  createdAt: true
 });
 
 export type Prompt = typeof prompts.$inferSelect;
