@@ -9,3 +9,8 @@ vite.config.ts.*
 .env*
 
 shared
+
+client/src/replit_integrations
+script
+
+attached_assets
